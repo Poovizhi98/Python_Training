@@ -1,0 +1,112 @@
+Tuples
+---------
+Heterogenous data types
+list(tpl)
+tuple(lst)
+
+Dictionaries:
+-------------
+with unique keys
+stored in any order(randomly)
+d={}
+
+To check the key in dictionary:
+----------------------------------
+if 'Fred' in d:
+  print(d['Fred'])
+else:
+  print('\'Fred\' is not a key')
+
+KeywordArguments:
+----------------------
+def f(**args):
+    a=args['a']
+    b=args['b']
+    c=args['c']
+    return 2*a*a +3*b+c
+x=f(a=2,b=11,c=3)
+print(x)
+=============================
+Wamp server for windows10
+=============================
+
+Sets
+-----
+Can't have a duplicate value
+Checking for all and any
+--------------------------
+S={1,2,3,4,5,6,7}
+>>> all([x>0 for x in S])
+True
+>>> any([x>0 for x in S])
+True
+-------------------------------
+Errors and exception handling
+------------------------------
+Try and except block
+try:
+    try-block
+except xxxx:
+    except-block
+Some of the errors are:
+ValueError
+TypeError
+IndexError
+ZeroDivisionError
+-------------------------------
+try:
+    try-block
+except xxxxx:(treated as if block)
+    except-block
+else:
+    else block
+----------------------------------
+Whaterver the exceptions,finally will gets executed
+=========================================
+pip install mysql-connector-python-rf
+import mysql.connector
+==========================================
+
+CONNECTION WITH DATABASE
+--------------------------
+1.Give landing db
+2.Give host,port,username,passwd
+conObj=mysql.connector.connect(host='localhost',port=3306,user='root',passwd='root')
+conObj=mysql.connector.connect(host='localhost',port=3306,user='root',passwd='root',database='my_dxc')
+
+To execute commands,we need cursor Object
+---------------------------------------------
+curObj=conObj.cursor()
+print(curObj)
+MySQLCursor: (Nothing executed yet)
+---------------------------------------------
+TO SHOW DATABASES
+------------------
+dbs=curObj.execute("show databases")
+>>> dbs
+>>> for x in curObj:
+...   print(x)
+...
+('information_schema',)
+('dxc',)
+('dxc1',)
+('my_dxc',)
+('mysql',)
+>>> print(curObj)
+MySQLCursor: show databases
+----------------------------------------------------
+dbs=curObj.execute("select * from EmpTable")
+>>> dbs
+>>> for x in curObj:
+...   print(x)
+...
+(1, 'Ranjitha', 'Andhra', 'Cloud')
+(2, 'Subashree', 'Kancheepuram', 'Data Analytics')
+('performance_schema',)
+('test',)
+-------------------------------------------
+C:\Users\psabapathi\Documents\Python_Training>pip install requests beautifulsoup4
+sCrapping
+------------
+1.BeautifulSoup
+2.Scrap

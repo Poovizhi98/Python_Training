@@ -1,0 +1,41 @@
+Date and time modules
+----------------------
+from datetime import date
+>>> from datetime import time
+>>> from datetime import datetime
+>>> date.today()
+datetime.date(2019, 11, 29)
+>>>m.day
+29
+>>> m.year
+2019
+>>> m.month
+11
+>>> m.weekday()
+4
+>>> datetime.now()
+datetime.datetime(2019, 11, 29, 11, 1, 0, 573746)
+>>> datetime.time(datetime.now())
+datetime.time(11, 2, 26, 18021)
+
+String type of date
+-----------------------
+>>> a=datetime.now()
+>>> a.strftime("%y")
+'19'
+>>> a.strftime("%x")
+'11/29/19'
+>>> a.strftime("%b")
+'Nov'
+
+Before/After some days
+--------------------------
+>>> from datetime import timedelta
+>>> datetime.now()+timedelta(days=365)
+datetime.datetime(2020, 11, 28, 11, 11, 31, 842450)
+>>> datetime.now()+timedelta(days=7)
+datetime.datetime(2019, 12, 6, 11, 11, 47, 120414)
+>>> datetime.now()-timedelta(weeks=3)
+datetime.datetime(2019, 11, 8, 11, 13, 15, 495301)
+
+Create applications in UTC time zones (GMT)

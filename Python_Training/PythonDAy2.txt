@@ -1,0 +1,241 @@
+Python Loops
+Definite loops
+For loops
+Indefinite loops
+while loops
+
+String,Lists,range,dictionaries,tuples are iterable objetcs
+
+Counting the no of vowels:
+--------------------------
+for s in word:
+  if s in ['a',]:
+    count++
+
+To be printed with 2 letters in string 
+Abnormal condition:
+--------------------
+Avoid break and continue 
+USe flag
+
+while/else and for/else
+--------------------------
+if the condition is false,,the else part gets executed
+but only for normal loops 
+not for break 
+
+During importing we can also use alias 
+Eg 
+from math import sqrt as s
+
+pip(python installer packages)
+----
+Eg:NumPy
+1.Built-in modules
+2.Bundled modules (import)
+3.Using Installer(External modules)
+
+Function definition:
+----------------------
+def
+return function from a  function(because python treated function as object)
+print(print(4))
+4(inner print)
+returns None(outer print returns nothing) 
+
+ from random import random
+-----------------------------
+random()
+
+Anything starts with__ refers to internal
+==========================================
+Eg:__builtins__.print('Hi')
+__builtins__ internal modules already getting imported
+
+Help:
+------
+help(print)
+To see all the functions in particular module:
+-----------------------------------------------
+dir(math)
+
+Formal and actual parameters
+---------------------------------
+function definition--->formal
+calling function--->actual
+
+Another bundled modules
+-------------------------
+from time import sleep
+perf_counter()
+
+import sys(System specific functionS)
+----------
+
+address of the particular object
+-----------------------------------
+ x=7
+>>> hex(id(x))
+'0x5055d950'
+
+memory management in python(heap and stack Memory)
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+namespace(std::cout)cout from std
+In python,everything is object so module itself wil act as namespace
+so,we are writing math.sqrt()
+
+eval(Evaluators)
+-----
+x=eval(input())-->for float and int we can use both
+
+FunctionS
+------------
+If we need to use variable as globally and locally,write global(prefix to variable)
+
+InLine Functions
+--------------------
+The compiler replaces the function call with function definition itself
+To impove the efficiency
+The inline function should execute if the code is very small
+In python, We can use this with lambda expression
+def evaluate(f,x,y):
+...     return f(x,y)
+...
+>>> evaluate(lambda x,y:3*x+y,10,2)
+32
+Here, lambda expression should be single statement or if-else condition
+It should not have block
+
+Generate functions
+-----------------------
+* Not having return and having yield statements
+def gen():
+...   yield 3
+...   yield 'wow'
+...   yield -1
+...   yield 1.2
+...
+>>> from yieldsequence import gen
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'yieldsequence'
+>>> x=gen()
+>>> next(x)
+3
+>>> next(x)
+'wow'
+>>> next(x)
+-1
+>>> next(x)
+1.2
+>>> next(x)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+-------------------------------------------------------
+>>> gen
+<function gen at 0x03369F60>
+>>> type(gen)
+<class 'function'>
+>>> gen()
+<generator object gen at 0x03357D30>
+>>> type(gen())
+<class 'generator'>
+>>> x=gen()
+>>> x
+<generator object gen at 0x03357E70>
+>>> type(x)
+<class 'generator'>
+----------------------------------------------------------
+In databases:
+===============
+def counter():
+...   x=1
+...   while True:
+...     yield x
+...     x+=1
+...
+>>> y=counter()
+>>> next(y)
+1
+>>> next(y)
+2
+--------------------------------------------------------
+Strings
+----------
+split
+count
+splicing
+
+File Objects
+---------------
+read,write,append
+open and close
+with block(the file will remain open upto that block)
+
+import fractions from Fraction
+Fraction(1,8)
+------------------------------------------------------------
+Lists
+======
+Heterogenous data types
+[]
+Lists are mutable
+Dictionaries are mutable
+Strings are immutable
+Tuples are immutable
+
+Shallow copy:
+--------------
+a=10
+b=a
+print(a==b)
+print(a is b)-->Aliases(same output)
+Deep copy:
+------------
+a=10
+b=10
+print(a==b)
+print(a is b)-->Aliases(different output)
+a=[10,20]
+>>> b=[10,20]
+>>> print(a==b)
+True
+>>> print(a is b)
+False
+---------------------------------------------------------------
+nums=[1,2,3,4]
+>>> for i in range(len(nums)-1,-1,-1):
+...   print(nums[i])
+...
+4
+3
+2
+1
+
+String slicing
+----------------
+s[ : :2]-->odd
+s[ : :1]-->even
+s[ : :-1]-->reverse
+s[2:5]=['a','b','c']
+To delete:
+del[3:5]
+del c[1],c[3]
+s[2:5]-->['a','b','c']
+
+List
+=====
+count
+insert
+append
+index
+remove
+reverse
+sort
+
+List comprehension:set builder notation
+P=[x**2 for x in [0,1,2,3,4,5,6,7]]
+
+Multi-dimensional list are also possible
